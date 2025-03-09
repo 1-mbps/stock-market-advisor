@@ -1,11 +1,15 @@
 from typing import Generator
 from streamlit.runtime.state import SessionStateProxy
 
+import os
 import yaml
 from qdrant_client import QdrantClient
 from simple_llm.agents.delegator import Delegator, DelegatorClient
 from simple_llm.embeddings.openai import openai_embedding
 from simple_llm.clients.openai import OpenAIAgent
+from dotenv import load_dotenv
+
+load_dotenv()
 
 from agents import Researcher, Advisor, Analyst
 
@@ -40,7 +44,7 @@ class Chat:
 class StockAdvisorChat(Chat):
     def __init__(self, session: SessionStateProxy):
         agents = [Researcher(), Researcher(), Advisor(), Analyst()]
-        vec_client = QdrantClient(path="prompt_db-qdrant")
+        vec_client = QdrantClient(url=os.environ["QDRANT_URL"], api_key=os.environ["QDRANT_API_KEY"])
         del_client = DelegatorClient(vec_client, "delegator-prompts", openai_embedding)
         delegator = Delegator(agent_cls=OpenAIAgent, delegator_client=del_client, **model_config["delegator"])
         super().__init__(agents, delegator, session)
