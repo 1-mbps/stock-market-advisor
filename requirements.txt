@@ -1,3 +1,4 @@
-simple_llm[openai]
+simple_llm
+openai
 pydantic
 streamlit
