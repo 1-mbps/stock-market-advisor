@@ -3,10 +3,11 @@ from simple_llm.embeddings.openai import openai_embedding
 
 from qdrant_client import QdrantClient, models
 import dotenv
+import os
 
 dotenv.load_dotenv()
 
-client = QdrantClient(path="prompt_db-qdrant")
+client = QdrantClient(url=os.environ["QDRANT_URL"], api_key=os.environ["QDRANT_API_KEY"])
 
 client.create_collection(
     collection_name="delegator-prompts",
