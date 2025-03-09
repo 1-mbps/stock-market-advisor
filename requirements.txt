@@ -3,3 +3,5 @@ openai
 pydantic
 streamlit
 pyyaml
+qdrant_client
+praw
