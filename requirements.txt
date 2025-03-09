@@ -1,4 +1,4 @@
-https://test-files.pythonhosted.org/packages/2e/aa/78df20638ee92f373317f49024bf6a14c474d6b95891d684493ff115883a/simple_llm-1.23-py3-none-any.whl
+https://test-files.pythonhosted.org/packages/8b/f6/a1c6f3c9d34c0716e2a670aeafe89c43f924fc42942d7ac11f4b23d41c36/simple_llm-1.23.tar.gz
 openai
 pydantic
 streamlit
