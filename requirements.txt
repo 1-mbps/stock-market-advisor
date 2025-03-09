@@ -2,3 +2,4 @@ https://test-files.pythonhosted.org/packages/2e/aa/78df20638ee92f373317f49024bf6
 openai
 pydantic
 streamlit
+pyyaml
