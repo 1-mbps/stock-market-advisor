@@ -5,3 +5,4 @@ streamlit
 pyyaml
 qdrant_client
 praw
+python-dotenv
