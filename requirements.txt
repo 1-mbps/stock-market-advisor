@@ -1,4 +1,4 @@
-simple_llm
+https://test.pypi.org/simple/ simple-llm
 openai
 pydantic
 streamlit
